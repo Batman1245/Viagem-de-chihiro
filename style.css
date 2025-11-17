@@ -1,0 +1,278 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: url('Assets/background.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 48px 0;
+}
+
+header img {
+    height: 80px;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    padding: 12px;
+    transition: transform 0.2s;
+    background-color: rgb(136, 137, 138);
+}
+
+nav a img:hover {
+    transform: scale(1.1);
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    min-height: calc(100vh - 176px);
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(1000px 400px at 25% 50%, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.1) 100%);
+    pointer-events: none;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    transform: translateY(-120px);
+}
+
+/* Texto */
+.infor {
+    width: 520px;
+    color: #fff;
+}
+
+.infor h1 {
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 56px;
+    line-height: 1.06;
+    letter-spacing: 0.5px;
+}
+
+#Titulo {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+p {
+    color: #fff;
+    margin: 12px 0 0 0;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+/* Botões */
+.btn-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-row a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#astagora {
+    background-color: #e6aeb4;
+    color: #111;
+    border: none;
+}
+
+#astagora img {
+    width: 14px;
+    height: 14px;
+}
+
+#assistir {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #e6aeb4;
+}
+
+#assistir:hover {
+    background-color: #e6aeb4;
+    color: #111;
+}
+
+/* GHOSTS */
+.ghost {
+    position: absolute;
+    right: 20%;
+    bottom: 210px;
+    display: flex;
+    align-items: flex-end;
+    gap: 40px;
+    z-index: 1;
+}
+
+.ghost img {
+    width: 320px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(179,147,255,0.45)) drop-shadow(0 0 40px rgba(179,147,255,0.25));
+}
+
+.ghost-left {
+    opacity: 0.95;
+    transform: translateY(-4px);
+}
+
+.ghost-right {
+    opacity: 1;
+    transform: translateY(0px);
+    width: 300px;
+}
+
+/* ============================
+   RESPONSIVIDADE
+============================ */
+
+/* Tablets */
+@media (max-width: 1280px) {
+    header, .container {
+        width: 100%;
+        padding: 0 32px;
+    }
+    .ghost {
+        right: 4%;
+        bottom: -20px;
+    }
+}
+
+/* Tablet / Mobile grande */
+@media (max-width: 900px) {
+    .container {
+        transform: translateY(-40px);
+    }
+
+    .infor {
+        width: 100%;
+    }
+
+    .infor h1 {
+        font-size: 40px;
+    }
+
+    .ghost img {
+        width: 200px;
+    }
+
+    .ghost {
+        bottom: 0;
+        right: 0;
+        gap: 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    header {
+        padding: 24px 16px;
+    }
+
+    header img {
+        height: 55px;
+    }
+
+    nav a img {
+        padding: 8px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .container {
+        transform: translateY(0);
+        padding: 0 20px;
+    }
+
+    .infor h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .btn-row {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-row a {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ghost {
+        position: static;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .ghost img {
+        width: 150px;
+    }
+}
+
+/* Mobile pequeno */
+@media (max-width: 450px) {
+
+    .infor h1 {
+        font-size: 26px;
+    }
+
+    #Titulo {
+        font-size: 14px;
+    }
+
+    .ghost img {
+        width: 120px;
+    }
+}
+
